@@ -15,7 +15,7 @@ func twoSum(nums []int, target int) []int {
 
 	for i := 0; i < len(nums); i++ {
 		complimentaryValueIndex, isComplimentaryValueInMap = numsMap[target-nums[i]]
-		if isComplimentaryValueInMap && nums[i]+nums[complimentaryValueIndex] == target {
+		if isComplimentaryValueInMap {
 			res[0] = complimentaryValueIndex
 			res[1] = i
 			return res
