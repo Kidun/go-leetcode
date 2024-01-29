@@ -41,8 +41,13 @@ func (list *ListNode) Print() string {
 }
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	// sanity checks
 	if list1 == nil && list2 == nil {
 		return nil
+	} else if list1 == nil {
+		return list2
+	} else if list2 == nil {
+		return list1
 	}
 
 	var list3, list3_head *ListNode = nil, nil
