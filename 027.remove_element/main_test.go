@@ -29,8 +29,26 @@ func Test_removeElement(t *testing.T) {
 	}
 
 	a = []int{0, 1, 2, 2, 3, 0, 4, 2}
-	res := printArray(a, removeElement(a, 2))
-	if res != "0 1 4 0 3" {
+	res = printArray(a, removeElement(a, 2))
+	if res != "0 1 3 0 4" {
 		t.Error("unexpected value for {0,1,2,2,3,0,4,2}, |" + res + "|")
+	}
+
+	a = []int{}
+	res = printArray(a, removeElement(a, 2))
+	if res != "Empty slice" {
+		t.Error("unexpected value for {}, |" + res + "|")
+	}
+
+	a = []int{0, 0, 0, 0, 0}
+	res = printArray(a, removeElement(a, 0))
+	if res != "Empty slice" {
+		t.Error("unexpected value for {0, 0, 0, 0, 0}, |" + res + "|")
+	}
+
+	a = []int{0, 0, 1, 0, 0, 0}
+	res = printArray(a, removeElement(a, 0))
+	if res != "1" {
+		t.Error("unexpected value for {0, 0, 1, 0, 0, 0}, |" + res + "|")
 	}
 }
