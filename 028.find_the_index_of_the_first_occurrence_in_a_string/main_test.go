@@ -11,7 +11,7 @@ func Test_strStr(t *testing.T) {
 		t.Error("unexpected value for sadbutsad, sad, |" + strconv.Itoa(strStr("sadbutsad", "sad")) + "|")
 	}
 
-	if strStr("leetcode", "leeto") != 0 {
+	if strStr("leetcode", "leeto") != -1 {
 		t.Error("unexpected value for leetcode, leeto, |" + strconv.Itoa(strStr("leetcode", "leeto")) + "|")
 	}
 
