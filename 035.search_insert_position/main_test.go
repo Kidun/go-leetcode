@@ -22,15 +22,66 @@ func printArray(nums []int, nums_len int) string {
 }
 
 func Test_searchInsert(t *testing.T) {
-	a := []int{1, 3, 5, 6}
-	res := searchInsert(a, 5))
-	if res != "2" {
-		t.Error("unexpected value for {"+printArray(a, len(a))+"}, |" + strconv.Itoa(res) + "|")
+	a := []int{1, 1, 1, 1, 1, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6}
+	ins := 3
+	res := searchInsert(a, ins)
+	if res != 5 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
+	}
+
+	a = []int{1, 1, 1, 1, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6}
+	res = searchInsert(a, ins)
+	if res != 4 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
+	}
+
+	a = []int{1, 1, 1, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6}
+	res = searchInsert(a, ins)
+	if res != 3 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
+	}
+
+	a = []int{1, 1, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6}
+	res = searchInsert(a, ins)
+	if res != 2 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
+	}
+
+	a = []int{1, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6}
+	res = searchInsert(a, ins)
+	if res != 1 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
+	}
+
+	a = []int{1, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6}
+	ins = 2
+	res = searchInsert(a, ins)
+	if res != 1 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
 	}
 
 	a = []int{1, 3, 5, 6}
-	res = searchInsert(a, 2))
-	if res != "1" {
-		t.Error("unexpected value for {"+printArray(a, len(a))+"}, |" + strconv.Itoa(res) + "|")
+	ins = 5
+	res = searchInsert(a, ins)
+	if res != 2 {
+		t.Error("unexpected value for inserting " + strconv.Itoa(ins) + " into {" + printArray(a, len(a)) + "}, result is |" + strconv.Itoa(res) + "|")
+	}
+
+	ins = 2
+	res = searchInsert(a, ins)
+	if res != 1 {
+		t.Error("unexpected value for {" + printArray(a, len(a)) + "}, |" + strconv.Itoa(res) + "|")
+	}
+
+	ins = 7
+	res = searchInsert(a, ins)
+	if res != 4 {
+		t.Error("unexpected value for {" + printArray(a, len(a)) + "}, |" + strconv.Itoa(res) + "|")
+	}
+
+	ins = 0
+	res = searchInsert(a, ins)
+	if res != 0 {
+		t.Error("unexpected value for {" + printArray(a, len(a)) + "}, |" + strconv.Itoa(res) + "|")
 	}
 }
