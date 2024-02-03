@@ -26,7 +26,7 @@ func Test_plusOne(t *testing.T) {
 	str_src := printArray(src, len(src))
 	res := plusOne(src)
 	str_res := printArray(res, len(res))
-	if res != "1 2 4" {
+	if str_res != "1 2 4" {
 		t.Error("unexpected value for {" + str_src + "}, {" + str_res + "}")
 	}
 
@@ -34,7 +34,7 @@ func Test_plusOne(t *testing.T) {
 	str_src = printArray(src, len(src))
 	res = plusOne(src)
 	str_res = printArray(res, len(res))
-	if res != "1 0 0 0 0" {
+	if str_res != "1 0 0 0 0" {
 		t.Error("unexpected value for {" + str_src + "}, {" + str_res + "}")
 	}
 
@@ -42,7 +42,7 @@ func Test_plusOne(t *testing.T) {
 	str_src = printArray(src, len(src))
 	res = plusOne(src)
 	str_res = printArray(res, len(res))
-	if res != "4 3 2 2" {
+	if str_res != "4 3 2 2" {
 		t.Error("unexpected value for {" + str_src + "}, {" + str_res + "}")
 	}
 
@@ -50,7 +50,15 @@ func Test_plusOne(t *testing.T) {
 	str_src = printArray(src, len(src))
 	res = plusOne(src)
 	str_res = printArray(res, len(res))
-	if res != "1 0" {
+	if str_res != "1 0" {
+		t.Error("unexpected value for {" + str_src + "}, {" + str_res + "}")
+	}
+
+	src = []int{1, 2, 9, 9, 9}
+	str_src = printArray(src, len(src))
+	res = plusOne(src)
+	str_res = printArray(res, len(res))
+	if str_res != "1 3 0 0 0" {
 		t.Error("unexpected value for {" + str_src + "}, {" + str_res + "}")
 	}
 }
