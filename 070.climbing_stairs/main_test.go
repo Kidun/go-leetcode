@@ -17,4 +17,29 @@ func Test_climbStairs(t *testing.T) {
 	if res != 3 {
 		t.Error("unexpected value for {" + strconv.Itoa(x) + "}, {" + strconv.Itoa(res) + "}")
 	}
+
+	x = 4
+	res = climbStairs(x)
+	if res != 5 {
+		t.Error("unexpected value for {" + strconv.Itoa(x) + "}, {" + strconv.Itoa(res) + "}")
+	}
+
+	x = 5
+	res = climbStairs(x)
+	if res != 8 {
+		t.Error("unexpected value for {" + strconv.Itoa(x) + "}, {" + strconv.Itoa(res) + "}")
+	}
+
+	x = 6
+	res = climbStairs(x)
+	if res != 13 {
+		t.Error("unexpected value for {" + strconv.Itoa(x) + "}, {" + strconv.Itoa(res) + "}")
+	}
+
+	x = 1
+	res = climbStairs(x)
+	if res != 1 {
+		t.Error("unexpected value for {" + strconv.Itoa(x) + "}, {" + strconv.Itoa(res) + "}")
+	}
+
 }
