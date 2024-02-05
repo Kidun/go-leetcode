@@ -2,17 +2,15 @@ package main
 
 func mySqrt(x int) int {
 	// sanity checks, border conditions
-	left := 1
+	left := 0
 	right := 46340
 	if x >= 2147395600 {
 		return right
-	} else if x < 4 {
-		return left
 	}
-	var mid int
 
 	// as we can't use math libraries, and brute force approach have O(n),
 	// we'll search for the root using binary tree algorithm
+	var mid int
 	for left <= right {
 		mid = (right + left) / 2
 
