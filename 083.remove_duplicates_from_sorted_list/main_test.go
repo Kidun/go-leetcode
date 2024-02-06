@@ -41,7 +41,6 @@ func Test_deleteDuplicates(t *testing.T) {
 	list1.Add(1)
 	list1.Add(2)
 	str_list1 := list1.Print()
-
 	res := deleteDuplicates(list1)
 	str_res := res.Print()
 	if str_res != "1 2" {
@@ -54,10 +53,36 @@ func Test_deleteDuplicates(t *testing.T) {
 	list1.Add(3)
 	list1.Add(3)
 	str_list1 = list1.Print()
-
 	res = deleteDuplicates(list1)
 	str_res = res.Print()
 	if str_res != "1 2 3" {
 		t.Error("unexpected value for {" + str_list1 + "}, {" + str_res + "}")
 	}
+
+	list1 = &ListNode{Val: 1}
+	list1.Add(1)
+	list1.Add(2)
+	list1.Add(2)
+	list1.Add(2)
+	str_list1 = list1.Print()
+
+	res = deleteDuplicates(list1)
+	str_res = res.Print()
+	if str_res != "1 2" {
+		t.Error("unexpected value for {" + str_list1 + "}, {" + str_res + "}")
+	}
+
+	list1 = &ListNode{Val: 1}
+	list1.Add(1)
+	list1.Add(1)
+	list1.Add(1)
+	list1.Add(2)
+	str_list1 = list1.Print()
+
+	res = deleteDuplicates(list1)
+	str_res = res.Print()
+	if str_res != "1 2" {
+		t.Error("unexpected value for {" + str_list1 + "}, {" + str_res + "}")
+	}
+
 }
