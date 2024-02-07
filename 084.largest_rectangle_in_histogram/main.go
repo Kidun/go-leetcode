@@ -44,34 +44,6 @@ func largestRectangleArea(heights []int) int {
 	return maxArea
 }
 
-/*
-	type Rectangle struct {
-	    Index int
-	    Height int
-	}
-
-	func largestRectangleArea(heights []int) int {
-	    res := 0
-	    stack := make([]Rectangle, len(heights))
-
-	    for i, h := range heights {
-	        startIndex := i
-	        for len(stack) > 0 && stack[len(stack)-1].Height >= h {
-	            startIndex = stack[len(stack)-1].Index
-	            res = max(res, stack[len(stack)-1].Height * (i - stack[len(stack)-1].Index))
-	            stack = stack[:len(stack)-1]
-	        }
-	        stack = append(stack, Rectangle{startIndex, h})
-	    }
-
-	    for len(stack) > 0 {
-	        res = max(res, stack[len(stack)-1].Height * (len(heights) - stack[len(stack)-1].Index))
-	        stack = stack[:len(stack)-1]
-	    }
-	    return res
-	}
-*/
-
 func main() {
 
 }
