@@ -34,6 +34,30 @@ func Test_merge(t *testing.T) {
 		t.Error("unexpected value for {" + str_a + "}, {" + str_b + "} => {" + str_res + "}")
 	}
 
+	a = []int{4, 5, 6, 0, 0, 0, 0, 0, 0}
+	m = 3
+	b = []int{1, 2, 6, 7, 8, 9}
+	n = 6
+	str_a = printArray(a, m)
+	str_b = printArray(b, n)
+	merge(a, m, b, n)
+	str_res = printArray(a, m+n)
+	if str_res != "1 2 4 5 6 6 7 8 9" {
+		t.Error("unexpected value for {" + str_a + "}, {" + str_b + "} => {" + str_res + "}")
+	}
+
+	a = []int{4, 5, 6, 0, 0, 0}
+	m = 3
+	b = []int{1, 2, 3}
+	n = 3
+	str_a = printArray(a, m)
+	str_b = printArray(b, n)
+	merge(a, m, b, n)
+	str_res = printArray(a, m+n)
+	if str_res != "1 2 3 4 5 6" {
+		t.Error("unexpected value for {" + str_a + "}, {" + str_b + "} => {" + str_res + "}")
+	}
+
 	a = []int{1}
 	m = 1
 	b = []int{}

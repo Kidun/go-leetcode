@@ -1,7 +1,17 @@
 package main
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	return
+	// to avoid unnecessary shifts in arrays, better to go from the end
+	// add to the end the largest number from tails until nums2 is empty
+	for n > 0 {
+		if m != 0 && nums1[m-1] > nums2[n-1] {
+			nums1[m+n-1] = nums1[m-1]
+			m--
+		} else {
+			nums1[m+n-1] = nums2[n-1]
+			n--
+		}
+	}
 }
 
 func main() {
