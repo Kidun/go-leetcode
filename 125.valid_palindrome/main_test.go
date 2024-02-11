@@ -17,4 +17,14 @@ func Test_isPalindrome(t *testing.T) {
 	if isPalindrome(a) != true {
 		t.Error("unexpected value for {" + a + "}")
 	}
+
+	a = " 0s0"
+	if isPalindrome(a) != true {
+		t.Error("unexpected value for {" + a + "}")
+	}
+
+	a = "0A-"
+	if isPalindrome(a) != false {
+		t.Error("unexpected value for {" + a + "}")
+	}
 }
