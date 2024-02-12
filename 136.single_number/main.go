@@ -2,14 +2,11 @@ package main
 
 func singleNumber(nums []int) int {
 	numsMap := map[int]int{}
+	// count all similar values O(n)
 	for _, val := range nums {
-		_, ok := numsMap[val]
-		if ok {
-			delete(numsMap, val)
-		} else {
-			numsMap[val] = 1
-		}
+		numsMap[val]++
 	}
+	// find out single value O(n)
 	for val, count := range numsMap {
 		if count == 1 {
 			return val
