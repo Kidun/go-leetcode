@@ -2,11 +2,7 @@
 
 [https://leetcode.com/problems/reverse-bits/](https://leetcode.com/problems/reverse-bits/)
 
-Easy
-
-Topics
-
-Companies
+*Easy*
 
 Reverse bits of a given 32 bits unsigned integer.
 
