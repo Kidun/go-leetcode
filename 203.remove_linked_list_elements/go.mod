@@ -1,3 +1,3 @@
-module hammingWeight
+module removeElements
 
 go 1.17
