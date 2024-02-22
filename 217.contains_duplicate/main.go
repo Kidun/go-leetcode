@@ -7,10 +7,9 @@ func containsDuplicate(nums []int) bool {
 		if numsMap[num] {
 			// if it exists, we've found a dup
 			return true
-		} else {
-			// add new value to a hashmap
-			numsMap[num] = true
 		}
+		// add new value to a hashmap
+		numsMap[num] = true
 	}
 	return false
 }
