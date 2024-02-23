@@ -1,38 +1,34 @@
 package main
 
+// single queue solution
 type MyStack struct {
-	vals []int
-	top  int
+	q []int
 }
 
 func Constructor() MyStack {
-	return MyStack{vals: make([]int, 0), top: -1}
+	return MyStack{}
 }
 
 func (this *MyStack) Push(x int) {
-	this.top++
-	this.vals = append(this.vals, x)
+	this.q = append(this.q, x)
+	for i := 0; i < len(this.q)-1; i++ {
+		this.q = append(this.q, this.q[0])
+		this.q = this.q[1:]
+	}
 }
 
 func (this *MyStack) Pop() int {
-	if this.Empty() {
-		return 0
-	}
-	val := this.vals[this.top]
-	this.top--
-	this.vals = this.vals[:len(this.vals)-1]
+	val := this.q[0]
+	this.q = this.q[1:]
 	return val
 }
 
 func (this *MyStack) Top() int {
-	if this.Empty() {
-		return 0
-	}
-	return this.vals[this.top]
+	return this.q[0]
 }
 
 func (this *MyStack) Empty() bool {
-	return this.top == -1
+	return len(this.q) == 0
 }
 
 func main() {
