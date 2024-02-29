@@ -6,15 +6,13 @@ func isBadVersion(version int) bool {
 
 func firstBadVersion(n int) int {
 	left := 1
-	right := n
-	var cur int
-	for left <= right {
-		cur = (left + right) / 2
-		if isBadVersion(cur) {
-			right = cur - 1
+	for left < n {
+		mid := (left + n) / 2
+		if isBadVersion(mid) {
+			n = mid
 		} else {
-			left = cur + 1
+			left = mid + 1
 		}
 	}
-	return cur
+	return left
 }
