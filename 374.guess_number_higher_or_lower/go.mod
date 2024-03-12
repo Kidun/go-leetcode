@@ -1,3 +1,3 @@
-module isPerfectSquare
+module guessNumber
 
 go 1.17
