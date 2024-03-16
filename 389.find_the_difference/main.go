@@ -1,6 +1,7 @@
 package findTheDifference
 
 func findTheDifference(s string, t string) byte {
+	// in case of runes it would be more optimal to use hashmap
 	letters := [26]byte{}
 	for i := 0; i < len(s); i++ {
 		// ascii(a) - 97
